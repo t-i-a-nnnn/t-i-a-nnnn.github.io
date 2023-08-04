@@ -106,17 +106,17 @@
        
   <h1 id="CTF学习日记"><a href="#CTF学习日记" class="headerlink" title="CTF学习日记"></a>CTF学习日记</h1><h2 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h2><hr>
 <blockquote>
-<p><font size=6>目录遍历</font></p>
+<p><font size="6">目录遍历</font></p>
 </blockquote>
 <p>1.进入环境，根据提示寻找flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTFjiT"><img src="https://img-blog.csdnimg.cn/img_convert/bcfc24b5bf497fcf692020687d600d40.jpeg" alt="xTFjiT.jpg"></a>  </p>
 <p>2.一个一个包寻找，最终在包4&#x2F;4找到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTkCLR"><img src="https://img-blog.csdnimg.cn/img_convert/247876777ddaba377c45611c93d37296.jpeg" alt="xTkCLR.jpg"></a>  </p>
 <blockquote>
-<p><font size=6>PHPINFO</font>  </p>
+<p><font size="6">PHPINFO</font>  </p>
 </blockquote>
 <p>1.进入环境，没有任何可以操作的地方，再看看源代码  </p>
 <p>2.在源代码中进行关键词搜索，搜索<code>flag</code>，得到答案<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTk1TP"><img src="https://img-blog.csdnimg.cn/img_convert/55049e457d954dbc23f90098c6abf411.jpeg" alt="xTk1TP.jpg"></a>  </p>
 <blockquote>
-<p><font size=6>备份文件下载</font>  </p>
+<p><font size="6">备份文件下载</font>  </p>
 </blockquote>
 <h3 id="网站源码"><a href="#网站源码" class="headerlink" title="- 网站源码"></a>- 网站源码</h3><p>1.根据提示，进行源文件搜索，最终在<a target="_blank" rel="noopener" href="http://www.zip找到东西,解压得到如下/">www.zip找到东西，解压得到如下</a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe1G6"><img src="https://img-blog.csdnimg.cn/img_convert/ad0011dfb2aa6e1b70e6eee14875c064.jpeg" alt="xTe1G6.jpg"></a>  </p>
 <p>2.打开之后发现被耍了😅<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe3RK"><img src="https://img-blog.csdnimg.cn/img_convert/147e60928fe68c674d53ad30bb0804ef.jpeg" alt="xTe3RK.jpg"></a>   </p>
@@ -130,7 +130,7 @@
 <p>2.百度了一下发现DS_Store也是隐藏文件，直接在前面加<code>. </code> ，再访问，得到一个文件<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTnRCq"><img src="https://img-blog.csdnimg.cn/img_convert/6dced19c7851a2b1432c7d5850bb5f02.jpeg" alt="xTnRCq.jpg"></a> </p>
 <p>3.访问文件中的地址，得到flag   </p>
 <blockquote>
-<p><font size=6>Git泄露</font>  </p>
+<p><font size="6">Git泄露</font>  </p>
 </blockquote>
 <h3 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h3><ol>
 <li>下载Githack以及2.7版本的python并配置环境（一定要python2）</li>
@@ -149,7 +149,7 @@
 <p>2.直接在文件夹内生产.txt文件，获得flag  </p>
 <hr>
 <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><ul>
-<li><font size=6>目录遍历</font><br>1.什么是目录遍历</li>
+<li><font size="6">目录遍历</font><br>1.什么是目录遍历</li>
 </ul>
 <p>目录遍历是由于网站存在缺陷，导致网站目录可以被任意浏览，这会导致网站很多隐私文件与目录泄露<br>比如数据库备份文件，配置文件等目录遍历这个漏洞需要经常的去摸一摸，探一探存在资源的地方就极有可能存在目录遍历.</p>
 <p>2.目录遍历攻击是如何实现的  </p>

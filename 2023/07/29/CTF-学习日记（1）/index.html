@@ -106,23 +106,23 @@
        
   <h1 id="CTF学习日记"><a href="#CTF学习日记" class="headerlink" title="CTF学习日记"></a>CTF学习日记</h1><h2 id="web前置技能-HTTP协议"><a href="#web前置技能-HTTP协议" class="headerlink" title="web前置技能-HTTP协议"></a>web前置技能-HTTP协议</h2><hr>
 <blockquote>
-<p><font size=6>请求方式</font>  </p>
+<p><font size="6">请求方式</font>  </p>
 </blockquote>
 <p>1.打开环境根据提示，利用BURP抓包，改传参方式为<code>CTFUHB</code><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoSslq"><img src="https://img-blog.csdnimg.cn/img_convert/0ccbf227d65bd4a0c38714fc99244760.jpeg" alt="xoSslq.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoS7X6"><img src="https://img-blog.csdnimg.cn/img_convert/b91baca405f8b4552530250fd1c5e63a.jpeg" alt="xoS7X6.jpg"></a>  </p>
 <p>2.得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoSq0O"><img src="https://img-blog.csdnimg.cn/img_convert/821e578798cb6e2e347648c19f468973.jpeg" alt="xoSq0O.jpg"></a>  </p>
 <blockquote>
-<p><font size=6>302跳转</font>  </p>
+<p><font size="6">302跳转</font>  </p>
 </blockquote>
 <p>1.点击超链接，发现没有反应，检查NETWORK，发现有状态码为302<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopncq"><img src="https://img-blog.csdnimg.cn/img_convert/159ee5b0589fc20e00ed8842fc3b35d6.jpeg" alt="xopncq.jpg"></a>  </p>
 <p>2.直接抓包，点击Give me flag，将得到的包邮件发送到repeater，点击发送，在响应包中得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xop0HO"><img src="https://img-blog.csdnimg.cn/img_convert/d2cfc5a575f43c36606f0c27ec41757a.jpeg" alt="xop0HO.jpg"></a>  </p>
 <blockquote>
-<p><font size=6>Cookie</font></p>
+<p><font size="6">Cookie</font></p>
 </blockquote>
 <p>1.根据提示，只有admin才可的到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xops4H"><img src="https://img-blog.csdnimg.cn/img_convert/01d5b509b6b20fdc337296eea74bef88.jpeg" alt="xops4H.jpg"></a>  </p>
 <p>2.直接抓包，修改Cookie中的，admin&#x3D;1<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopggI"><img src="https://img-blog.csdnimg.cn/img_convert/20f43e5746a32834738a8999ada7263c.jpeg" alt="xopggI.jpg"></a>  </p>
 <p>3.再放包，得到flag  </p>
 <blockquote>
-<p><font size=6>基础认证</font></p>
+<p><font size="6">基础认证</font></p>
 </blockquote>
 <p>1.题目给出100组数组  </p>
 <p>2.进入环境，敲击页面中的click，可知这次要进行爆破<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopH8s"><img src="https://img-blog.csdnimg.cn/img_convert/bcc9a33b201c65b0ba6595562eeceec5.jpeg" alt="xopH8s.jpg"></a>  </p>
@@ -134,12 +134,12 @@
 <p>8.查询资料发现base编码里不能有&#x3D;，删除&#x3D;试试  </p>
 <p>9.发现有状态码为200，看看响应包，得到flag  </p>
 <blockquote>
-<p><font size=6>响应包源代码</font>  </p>
+<p><font size="6">响应包源代码</font>  </p>
 </blockquote>
 <p>1.BURP抓不到任何包，看看源代码试试  </p>
 <p>2.果然有惊喜<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoCBfH"><img src="https://img-blog.csdnimg.cn/img_convert/9e09626bb2457b4bed1622085676e2fa.jpeg" alt="xoCBfH.jpg"></a>  </p>
 <hr>
-<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p><font size=6>302临时重定向</font><br>什么是重定向？<br>即用户输入网站A但打开之后变成了网站B  </p>
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p><font size="6">302临时重定向</font><br>什么是重定向？<br>即用户输入网站A但打开之后变成了网站B  </p>
 <p>作用：<br>301 重定向:搜索引擎在抓取新内容的同时也将旧的网址交换为重定向之后的网址     新网站的内容 —&gt;新网站<br>302重定向:搜索引擎会抓取新的内容而保存旧的网址。 新网站的内容 –&gt;旧网站</p>
 <p>所以301重定向被称为永久重定向<br>而302重定向被称为临时重定向  </p>
 <hr>
@@ -241,9 +241,9 @@
       </a>
     
     
-      <a href="/2023/07/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%80%BB%E7%BB%93/" class="article-nav-link">
+      <a href="/2023/07/28/hello-world/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">第一次总结</div>
+        <div class="article-nav-title">Hello World</div>
       </a>
     
   </nav>
