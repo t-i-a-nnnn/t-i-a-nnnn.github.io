@@ -125,18 +125,18 @@
 <ul>
 <li>得到flag</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041706279.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041708071.png" alt="img"></p>
 <h1 id="warmup-csaw-2016"><a href="#warmup-csaw-2016" class="headerlink" title="warmup_csaw_2016"></a>warmup_csaw_2016</h1><ul>
 <li>先把文件放入虚拟机</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/7e398aa9bf954e60b1e6536b8e25b6f3.png#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041738287.png" alt="img"></p>
 <p>没有开启保护并且为64位文件</p>
 <ul>
 <li>放入ida中</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041625325.png" alt="在这里插入图片描述"></p>
 <p>代码分析：两个write函数输出，利用sprintf函数将sub_40060函数的地址打印出来放到s，在最后一行发现gets函数，存在溢出条件。查看是否有后门函数，</p>
-<p><img src="https://img-blog.csdnimg.cn/9a1153114e0c4a07ab557651c69eee27.png#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041712086.png" alt="在这里插入图片描述"></p>
 <p>发现了cat flag，只要返回到0x40060D，即可得到flag。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041625403.png" alt="在这里插入图片描述"></p>
 <p>偏移量ida已经给出一部分，略加计算可偏移量为0x40+8</p>
@@ -148,7 +148,7 @@
 <p>得到flag<br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041625444.png" alt="在这里插入图片描述"></p>
 <hr>
 <h1 id="ciscn-2019-n-1"><a href="#ciscn-2019-n-1" class="headerlink" title="ciscn_2019_n_1"></a>ciscn_2019_n_1</h1><ul>
-<li>文件检查：<br><img src="https://img-blog.csdnimg.cn/584ccaa9201e47fe83d5894954e27e85.png#pic_center" alt="在这里插入图片描述"></li>
+<li>文件检查：<br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041712407.png" alt="在这里插入图片描述"></li>
 </ul>
 <p>发现是64位文件，且只开启了NX保护</p>
 <ul>
@@ -170,7 +170,7 @@
 <ul>
 <li>得到FLAG</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/87ea2d2267df42b493e59fcf6a6ab6cf.png#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041712446.png" alt="在这里插入图片描述"></p>
 <hr>
  
       <!-- reward -->
