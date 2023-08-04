@@ -80,7 +80,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">962</span>
+            <span class="post-count">961</span>
         </span>
     </span>
 
@@ -104,9 +104,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>@[toc]</p>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><ul>
-<li>栈是一种典型的后进先出(Last in First Out)的数据结构，其操作主要有压栈(push)与出栈(pop)两种操作，<strong>程序的栈是从进程地址空间的高地址向低地址增长的。</strong><br><img src="https://img-blog.csdnimg.cn/b3536648e210461f8c1bf38eb6020141.jpeg#pic_center" alt="在这里插入图片描述"></li>
+  <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><ul>
+<li>栈是一种典型的后进先出(Last in First Out)的数据结构，其操作主要有压栈(push)与出栈(pop)两种操作，<strong>程序的栈是从进程地址空间的高地址向低地址增长的。</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041802221.jpeg" alt="在这里插入图片描述"></li>
 </ul>
 <h1 id="栈溢出原理"><a href="#栈溢出原理" class="headerlink" title="栈溢出原理"></a>栈溢出原理</h1><p>指程序向栈中某个变量写入的字节超过了这个变量本身所申请的字节数，导致与其相邻的栈中的变量的值被改变，属于缓冲区溢出漏洞的一种，类似的还是堆溢出、bss段溢出等。</p>
 <p>栈溢出发生条件：<br>1、程序必须向栈上写入数据<br>2、写入的数据大小没有被良好地控制<br>最典型的栈溢出利用就是覆盖返回地址为攻击者所控制的地址。例：</p>
