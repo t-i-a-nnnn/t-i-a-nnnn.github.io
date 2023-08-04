@@ -677,7 +677,7 @@
 <h2 id="6-CS和IP"><a href="#6-CS和IP" class="headerlink" title="6.CS和IP"></a>6.CS和IP</h2><p>CS为代码段寄存器<br>IP为指令指针寄存器</p>
 <p>CPU将CS、IP中的内容当作指令的段地址和偏移地址,用它们合成指令的物理地址,</p>
 <p>CPU将CS:IP指向的内容当作指令执行</p>
-<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="1-内存中字的存储"><a href="#1-内存中字的存储" class="headerlink" title="1.内存中字的存储"></a>1.内存中字的存储</h2><p>在0地址处开始存放20000（4E20H）<img src="https://img-blog.csdnimg.cn/75acbf8ba26f42ed9674a23013a1ce11.png#pic_center" alt="在这里插入图片描述"><br>高位对应高地址，低位对应低地址存储</p>
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="1-内存中字的存储"><a href="#1-内存中字的存储" class="headerlink" title="1.内存中字的存储"></a>1.内存中字的存储</h2><p>在0地址处开始存放20000（4E20H）<img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824686.png" alt="在这里插入图片描述"><br>高位对应高地址，低位对应低地址存储</p>
 <p>任何两个地址连续的内存单元，N号单元和N+1号单元，可以将它们看成两个内存单元，也可以看成一个地址为N的字单元中的高位字节单元和低位字节单元。</p>
 <h2 id="2-DS和-address"><a href="#2-DS和-address" class="headerlink" title="2.DS和[address]"></a>2.DS和[address]</h2><p>DS寄存器，通常用来存放要访问的数据的段地址。</p>
 <p>执行指令时，8086CPU自动取DS中的数据为内存单元的段地址</p>
@@ -736,10 +736,10 @@
     <div class="article-entry" itemprop="articleBody">
        
   <p>第四章-实验三（编程、编译、连接、跟踪）</p>
-<h1 id="（1）-根据题示完成tl-asm文件，并生成可执行文件tl-exe"><a href="#（1）-根据题示完成tl-asm文件，并生成可执行文件tl-exe" class="headerlink" title="（1） 根据题示完成tl.asm文件，并生成可执行文件tl.exe"></a>（1） 根据题示完成tl.asm文件，并生成可执行文件tl.exe</h1><p><img src="https://img-blog.csdnimg.cn/89a078530f354a1b9513ba532e686e1a.png#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="（2）用Debug跟踪tl-exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容"><a href="#（2）用Debug跟踪tl-exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容" class="headerlink" title="（2）用Debug跟踪tl.exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容"></a>（2）用Debug跟踪tl.exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容</h1><p><strong>执行前两部步，ax赋值2000H，并把值赋予ss。初始化sp，并赋值</strong><br><img src="https://img-blog.csdnimg.cn/6bb0b49e8ca84a9f83cdce88a56ce667.png#pic_center" alt="在这里插入图片描述"></p>
-<p><strong>执行pop ax，pop bx。每执行一次sp都+2</strong><br><img src="https://img-blog.csdnimg.cn/b6523eacd5ea428b858488d0eafb65c4.png#pic_center" alt="在这里插入图片描述"><br><strong>执行push ax,push bx。每执行一次sp都-2</strong><br><img src="https://img-blog.csdnimg.cn/4ae3e97541654459a31684b79255ada2.png#pic_center" alt="在这里插入图片描述"><br><strong>继续执行，直到安全退出</strong><br><img src="https://img-blog.csdnimg.cn/65b98ff706364acfbc4ff69dabc92192.png#pic_center" alt="在这里插入图片描述"><br>&#x3D;&#x3D;由上图可知栈顶一直为0&#x3D;&#x3D;</p>
-<h1 id="（3）查看PSP的内容"><a href="#（3）查看PSP的内容" class="headerlink" title="（3）查看PSP的内容"></a>（3）查看PSP的内容</h1><p><strong>由上图知DS和CS之间差10H，即256个字节，这段内存就是psp区，进去看看。</strong><br><img src="https://img-blog.csdnimg.cn/96cf834c7870452994019052159e868b.png#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="（1）-根据题示完成tl-asm文件，并生成可执行文件tl-exe"><a href="#（1）-根据题示完成tl-asm文件，并生成可执行文件tl-exe" class="headerlink" title="（1） 根据题示完成tl.asm文件，并生成可执行文件tl.exe"></a>（1） 根据题示完成tl.asm文件，并生成可执行文件tl.exe</h1><p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824073.png" alt="在这里插入图片描述"></p>
+<h1 id="（2）用Debug跟踪tl-exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容"><a href="#（2）用Debug跟踪tl-exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容" class="headerlink" title="（2）用Debug跟踪tl.exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容"></a>（2）用Debug跟踪tl.exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容</h1><p><strong>执行前两部步，ax赋值2000H，并把值赋予ss。初始化sp，并赋值</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824190.png" alt="在这里插入图片描述"></p>
+<p><strong>执行pop ax，pop bx。每执行一次sp都+2</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824991.png" alt="在这里插入图片描述"><br><strong>执行push ax,push bx。每执行一次sp都-2</strong><br><img src="https://img-blog.csdnimg.cn/4ae3e97541654459a31684b79255ada2.png#pic_center" alt="在这里插入图片描述"><br><strong>继续执行，直到安全退出</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824731.png" alt="在这里插入图片描述"><br>&#x3D;&#x3D;由上图可知栈顶一直为0&#x3D;&#x3D;</p>
+<h1 id="（3）查看PSP的内容"><a href="#（3）查看PSP的内容" class="headerlink" title="（3）查看PSP的内容"></a>（3）查看PSP的内容</h1><p><strong>由上图知DS和CS之间差10H，即256个字节，这段内存就是psp区，进去看看。</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824520.png" alt="在这里插入图片描述"></p>
  
       <!-- reward -->
       
@@ -791,26 +791,26 @@
 <blockquote>
 <p><font size="6">目录遍历</font></p>
 </blockquote>
-<p>1.进入环境，根据提示寻找flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTFjiT"><img src="https://img-blog.csdnimg.cn/img_convert/bcfc24b5bf497fcf692020687d600d40.jpeg" alt="xTFjiT.jpg"></a>  </p>
+<p>1.进入环境，根据提示寻找flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTFjiT"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824919.jpeg" alt="xTFjiT.jpg"></a>  </p>
 <p>2.一个一个包寻找，最终在包4&#x2F;4找到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTkCLR"><img src="https://img-blog.csdnimg.cn/img_convert/247876777ddaba377c45611c93d37296.jpeg" alt="xTkCLR.jpg"></a>  </p>
 <blockquote>
 <p><font size="6">PHPINFO</font>  </p>
 </blockquote>
 <p>1.进入环境，没有任何可以操作的地方，再看看源代码  </p>
-<p>2.在源代码中进行关键词搜索，搜索<code>flag</code>，得到答案<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTk1TP"><img src="https://img-blog.csdnimg.cn/img_convert/55049e457d954dbc23f90098c6abf411.jpeg" alt="xTk1TP.jpg"></a>  </p>
+<p>2.在源代码中进行关键词搜索，搜索<code>flag</code>，得到答案<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTk1TP"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825905.jpeg" alt="xTk1TP.jpg"></a>  </p>
 <blockquote>
 <p><font size="6">备份文件下载</font>  </p>
 </blockquote>
 <h3 id="网站源码"><a href="#网站源码" class="headerlink" title="- 网站源码"></a>- 网站源码</h3><p>1.根据提示，进行源文件搜索，最终在<a target="_blank" rel="noopener" href="http://www.zip找到东西,解压得到如下/">www.zip找到东西，解压得到如下</a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe1G6"><img src="https://img-blog.csdnimg.cn/img_convert/ad0011dfb2aa6e1b70e6eee14875c064.jpeg" alt="xTe1G6.jpg"></a>  </p>
-<p>2.打开之后发现被耍了😅<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe3RK"><img src="https://img-blog.csdnimg.cn/img_convert/147e60928fe68c674d53ad30bb0804ef.jpeg" alt="xTe3RK.jpg"></a>   </p>
-<p>3.直接在网站上访问txt文件，得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe0it"><img src="https://img-blog.csdnimg.cn/img_convert/68d07c2d7b484368061e71e4e0ae33dc.jpeg" alt="xTe0it.jpg"></a>  </p>
+<p>2.打开之后发现被耍了😅<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe3RK"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825946.jpeg" alt="xTe3RK.jpg"></a>   </p>
+<p>3.直接在网站上访问txt文件，得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe0it"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825445.jpeg" alt="xTe0it.jpg"></a>  </p>
 <h3 id="bak文件"><a href="#bak文件" class="headerlink" title="- bak文件"></a>- bak文件</h3><p>1.直接根据提示访问index.php.bak文件<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe2Zj"><img src="https://img-blog.csdnimg.cn/img_convert/fba953785f832143425e0e910f752c13.jpeg" alt="xTe2Zj.jpg"></a>  </p>
-<p>2.得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe7yF"><img src="https://img-blog.csdnimg.cn/img_convert/bd17ed57fde5600d56ceeea4c42b5035.jpeg" alt="xTe7yF.jpg"></a>  </p>
-<h3 id="vim缓存"><a href="#vim缓存" class="headerlink" title="- vim缓存"></a>- vim缓存</h3><p>1.简单百度了一下vim缓存文件的后缀为.swp，直接访问<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTmNlT"><img src="https://img-blog.csdnimg.cn/img_convert/a6b7d6ef7ead2872495c2394f9bfbe63.jpeg" alt="xTmNlT.jpg"></a>  </p>
+<p>2.得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe7yF"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825816.jpeg" alt="xTe7yF.jpg"></a>  </p>
+<h3 id="vim缓存"><a href="#vim缓存" class="headerlink" title="- vim缓存"></a>- vim缓存</h3><p>1.简单百度了一下vim缓存文件的后缀为.swp，直接访问<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTmNlT"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825782.jpeg" alt="xTmNlT.jpg"></a>  </p>
 <p>2.结果还是Not found  </p>
-<p>3.再次百度得知缓存文件为隐藏文件，故要在前面再加一个<code>.</code>，再次访问，得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTmyfx"><img src="https://img-blog.csdnimg.cn/img_convert/25865ffd87122b8b516b13ec7ddd704f.jpeg" alt="xTmyfx.jpg"></a>  </p>
-<h3 id="DS-Store"><a href="#DS-Store" class="headerlink" title="- DS_Store"></a>- DS_Store</h3><p>1.进入环境，不知道该怎么操作，但是查询文件的题目做了好多，按照类似的思路先访问一下DS_Store<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTnrDg"><img src="https://img-blog.csdnimg.cn/img_convert/39ab7c2ba8e6ce2a7e8a7e5c7a3d68a1.jpeg" alt="xTnrDg.jpg"></a><br>发现还是404 Not found   </p>
-<p>2.百度了一下发现DS_Store也是隐藏文件，直接在前面加<code>. </code> ，再访问，得到一个文件<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTnRCq"><img src="https://img-blog.csdnimg.cn/img_convert/6dced19c7851a2b1432c7d5850bb5f02.jpeg" alt="xTnRCq.jpg"></a> </p>
+<p>3.再次百度得知缓存文件为隐藏文件，故要在前面再加一个<code>.</code>，再次访问，得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTmyfx"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825243.jpeg" alt="xTmyfx.jpg"></a>  </p>
+<h3 id="DS-Store"><a href="#DS-Store" class="headerlink" title="- DS_Store"></a>- DS_Store</h3><p>1.进入环境，不知道该怎么操作，但是查询文件的题目做了好多，按照类似的思路先访问一下DS_Store<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTnrDg"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825610.jpeg" alt="xTnrDg.jpg"></a><br>发现还是404 Not found   </p>
+<p>2.百度了一下发现DS_Store也是隐藏文件，直接在前面加<code>. </code> ，再访问，得到一个文件<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTnRCq"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825836.jpeg" alt="xTnRCq.jpg"></a> </p>
 <p>3.访问文件中的地址，得到flag   </p>
 <blockquote>
 <p><font size="6">Git泄露</font>  </p>
@@ -818,8 +818,8 @@
 <h3 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h3><ol>
 <li>下载Githack以及2.7版本的python并配置环境（一定要python2）</li>
 </ol>
-<p>2.打开cmd，进入Githack-master目录下，输入<br><code>python githack.py http://111.200.241.244:62693（目标网址）/.git/，  </code><br>得到如下<br><a target="_blank" rel="noopener" href="https://imgse.com/i/x7ANJf"><img src="https://img-blog.csdnimg.cn/img_convert/d8aaa19df482d376736e5e3cb33a6177.jpeg" alt="x7ANJf.jpg"></a>  </p>
-<p>3.打开cmd中提供的文件，右键Git bash here！并输入git log（查看历史提交）得到如下<br><a target="_blank" rel="noopener" href="https://imgse.com/i/x7EQhV"><img src="https://img-blog.csdnimg.cn/img_convert/c9e0127be37e067ee5b075308da68a69.jpeg" alt="x7EQhV.jpg"></a>  </p>
+<p>2.打开cmd，进入Githack-master目录下，输入<br><code>python githack.py http://111.200.241.244:62693（目标网址）/.git/，  </code><br>得到如下<br><a target="_blank" rel="noopener" href="https://imgse.com/i/x7ANJf"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825016.jpeg" alt="x7ANJf.jpg"></a>  </p>
+<p>3.打开cmd中提供的文件，右键Git bash here！并输入git log（查看历史提交）得到如下<br><a target="_blank" rel="noopener" href="https://imgse.com/i/x7EQhV"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825000.jpeg" alt="x7EQhV.jpg"></a>  </p>
 <p>4.回滚到上个版本，输入<br><code> git diff 77c391b0f2980556cf8aeceecdf093634718a070</code><br>得到flag  </p>
 <h3 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h3><p>1.执行上一题的前三步  </p>
 <p>2.先执行git stash list：查看stash了那些存储  </p>
@@ -910,27 +910,27 @@
 <blockquote>
 <p><font size="6">请求方式</font>  </p>
 </blockquote>
-<p>1.打开环境根据提示，利用BURP抓包，改传参方式为<code>CTFUHB</code><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoSslq"><img src="https://img-blog.csdnimg.cn/img_convert/0ccbf227d65bd4a0c38714fc99244760.jpeg" alt="xoSslq.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoS7X6"><img src="https://img-blog.csdnimg.cn/img_convert/b91baca405f8b4552530250fd1c5e63a.jpeg" alt="xoS7X6.jpg"></a>  </p>
-<p>2.得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoSq0O"><img src="https://img-blog.csdnimg.cn/img_convert/821e578798cb6e2e347648c19f468973.jpeg" alt="xoSq0O.jpg"></a>  </p>
+<p>1.打开环境根据提示，利用BURP抓包，改传参方式为<code>CTFUHB</code><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoSslq"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825968.jpeg" alt="xoSslq.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoS7X6"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825341.jpeg" alt="xoS7X6.jpg"></a>  </p>
+<p>2.得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoSq0O"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825712.jpeg" alt="xoSq0O.jpg"></a>  </p>
 <blockquote>
 <p><font size="6">302跳转</font>  </p>
 </blockquote>
-<p>1.点击超链接，发现没有反应，检查NETWORK，发现有状态码为302<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopncq"><img src="https://img-blog.csdnimg.cn/img_convert/159ee5b0589fc20e00ed8842fc3b35d6.jpeg" alt="xopncq.jpg"></a>  </p>
-<p>2.直接抓包，点击Give me flag，将得到的包邮件发送到repeater，点击发送，在响应包中得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xop0HO"><img src="https://img-blog.csdnimg.cn/img_convert/d2cfc5a575f43c36606f0c27ec41757a.jpeg" alt="xop0HO.jpg"></a>  </p>
+<p>1.点击超链接，发现没有反应，检查NETWORK，发现有状态码为302<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopncq"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825952.jpeg" alt="xopncq.jpg"></a>  </p>
+<p>2.直接抓包，点击Give me flag，将得到的包邮件发送到repeater，点击发送，在响应包中得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xop0HO"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826386.jpeg" alt="xop0HO.jpg"></a>  </p>
 <blockquote>
 <p><font size="6">Cookie</font></p>
 </blockquote>
-<p>1.根据提示，只有admin才可的到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xops4H"><img src="https://img-blog.csdnimg.cn/img_convert/01d5b509b6b20fdc337296eea74bef88.jpeg" alt="xops4H.jpg"></a>  </p>
-<p>2.直接抓包，修改Cookie中的，admin&#x3D;1<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopggI"><img src="https://img-blog.csdnimg.cn/img_convert/20f43e5746a32834738a8999ada7263c.jpeg" alt="xopggI.jpg"></a>  </p>
+<p>1.根据提示，只有admin才可的到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xops4H"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826752.jpeg" alt="xops4H.jpg"></a>  </p>
+<p>2.直接抓包，修改Cookie中的，admin&#x3D;1<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopggI"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826014.jpeg" alt="xopggI.jpg"></a>  </p>
 <p>3.再放包，得到flag  </p>
 <blockquote>
 <p><font size="6">基础认证</font></p>
 </blockquote>
 <p>1.题目给出100组数组  </p>
-<p>2.进入环境，敲击页面中的click，可知这次要进行爆破<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopH8s"><img src="https://img-blog.csdnimg.cn/img_convert/bcc9a33b201c65b0ba6595562eeceec5.jpeg" alt="xopH8s.jpg"></a>  </p>
-<p>3.开始抓包！在包中发现关键字Authorization basic(基础认证)<br>后面跟着一段base加密的东西，解码看看<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopxVU"><img src="https://img-blog.csdnimg.cn/img_convert/0b164682f6c6e03ea67e4488c5325118.jpeg" alt="xopxVU.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo9Ar6"><img src="https://img-blog.csdnimg.cn/img_convert/23ff538410eeb452802b71ae8121bd6f.jpeg" alt="xo9Ar6.jpg"></a>  </p>
+<p>2.进入环境，敲击页面中的click，可知这次要进行爆破<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopH8s"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826771.jpeg" alt="xopH8s.jpg"></a>  </p>
+<p>3.开始抓包！在包中发现关键字Authorization basic(基础认证)<br>后面跟着一段base加密的东西，解码看看<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopxVU"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826192.jpeg" alt="xopxVU.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo9Ar6"><img src="https://img-blog.csdnimg.cn/img_convert/23ff538410eeb452802b71ae8121bd6f.jpeg" alt="xo9Ar6.jpg"></a>  </p>
 <p>4.可知账号密码的格式应为（账号：密码）</p>
-<p>5.将包发送到Intruder，添加地址<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo93sP"><img src="https://img-blog.csdnimg.cn/img_convert/e1062792c6f00c02666732362e05641b.jpeg" alt="xo93sP.jpg"></a>  </p>
+<p>5.将包发送到Intruder，添加地址<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo93sP"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826214.jpeg" alt="xo93sP.jpg"></a>  </p>
 <p>6.导入字典，启用一个base64编码在payload processing，关闭URL-encode these characters，开始爆破！！！！！！！！  </p>
 <p>7.发现一个正确结果也没有😅  </p>
 <p>8.查询资料发现base编码里不能有&#x3D;，删除&#x3D;试试  </p>
@@ -939,7 +939,7 @@
 <p><font size="6">响应包源代码</font>  </p>
 </blockquote>
 <p>1.BURP抓不到任何包，看看源代码试试  </p>
-<p>2.果然有惊喜<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoCBfH"><img src="https://img-blog.csdnimg.cn/img_convert/9e09626bb2457b4bed1622085676e2fa.jpeg" alt="xoCBfH.jpg"></a>  </p>
+<p>2.果然有惊喜<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xoCBfH"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826883.jpeg" alt="xoCBfH.jpg"></a>  </p>
 <hr>
 <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p><font size="6">302临时重定向</font><br>什么是重定向？<br>即用户输入网站A但打开之后变成了网站B  </p>
 <p>作用：<br>301 重定向:搜索引擎在抓取新内容的同时也将旧的网址交换为重定向之后的网址     新网站的内容 —&gt;新网站<br>302重定向:搜索引擎会抓取新的内容而保存旧的网址。 新网站的内容 –&gt;旧网站</p>

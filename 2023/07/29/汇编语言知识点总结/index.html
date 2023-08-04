@@ -173,7 +173,7 @@
 <h2 id="6-CS和IP"><a href="#6-CS和IP" class="headerlink" title="6.CS和IP"></a>6.CS和IP</h2><p>CS为代码段寄存器<br>IP为指令指针寄存器</p>
 <p>CPU将CS、IP中的内容当作指令的段地址和偏移地址,用它们合成指令的物理地址,</p>
 <p>CPU将CS:IP指向的内容当作指令执行</p>
-<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="1-内存中字的存储"><a href="#1-内存中字的存储" class="headerlink" title="1.内存中字的存储"></a>1.内存中字的存储</h2><p>在0地址处开始存放20000（4E20H）<img src="https://img-blog.csdnimg.cn/75acbf8ba26f42ed9674a23013a1ce11.png#pic_center" alt="在这里插入图片描述"><br>高位对应高地址，低位对应低地址存储</p>
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="1-内存中字的存储"><a href="#1-内存中字的存储" class="headerlink" title="1.内存中字的存储"></a>1.内存中字的存储</h2><p>在0地址处开始存放20000（4E20H）<img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824686.png" alt="在这里插入图片描述"><br>高位对应高地址，低位对应低地址存储</p>
 <p>任何两个地址连续的内存单元，N号单元和N+1号单元，可以将它们看成两个内存单元，也可以看成一个地址为N的字单元中的高位字节单元和低位字节单元。</p>
 <h2 id="2-DS和-address"><a href="#2-DS和-address" class="headerlink" title="2.DS和[address]"></a>2.DS和[address]</h2><p>DS寄存器，通常用来存放要访问的数据的段地址。</p>
 <p>执行指令时，8086CPU自动取DS中的数据为内存单元的段地址</p>
