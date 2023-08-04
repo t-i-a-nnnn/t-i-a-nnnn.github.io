@@ -248,7 +248,7 @@
 <h1 id="warmup-csaw-2016"><a href="#warmup-csaw-2016" class="headerlink" title="warmup_csaw_2016"></a>warmup_csaw_2016</h1><ul>
 <li>先把文件放入虚拟机</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041738287.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041741693.png" alt="img"></p>
 <p>没有开启保护并且为64位文件</p>
 <ul>
 <li>放入ida中</li>
@@ -338,8 +338,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>@[toc]</p>
-<h1 id="栈帧结构概览"><a href="#栈帧结构概览" class="headerlink" title="栈帧结构概览"></a>栈帧结构概览</h1><p><img src="https://img-blog.csdnimg.cn/e4075f4a4b394354aa527222148a17fd.jpeg#pic_center" alt="在这里插入图片描述"></p>
+  <h1 id="栈帧结构概览"><a href="#栈帧结构概览" class="headerlink" title="栈帧结构概览"></a>栈帧结构概览</h1><p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041754142.jpeg" alt="在这里插入图片描述"></p>
 <ul>
 <li>父函数栈帧的栈底指针的值与子函数栈帧紧邻，以方便恢复父函数栈底指针</li>
 </ul>
@@ -349,7 +348,7 @@
 <li>在<code>ebp</code>和<code>esp</code>中间是一个栈帧。紧邻高地址就是父函数的栈帧</li>
 </ul>
 <hr>
-<p><img src="https://img-blog.csdnimg.cn/8b587cc935264c5a97afa7dfe4eda133.jpeg#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041754444.jpeg" alt="在这里插入图片描述"></p>
 <ul>
 <li>定义<ul>
 <li><code>esp</code>用来存储函数调用栈的栈顶地址，在压栈和退栈时发生变化</li>
@@ -363,7 +362,7 @@
 - 在压入所有参数后，会将调用函数进行调用后的下一条指令地址作为返回地址压入栈内，使得调用函数的`eip`信息得以保存
 - 再将当前的`ebp`寄存器的值即调用函数的基地址压入栈内，并更新`ebp`寄存器的值为当前栈顶的地址
 </code></pre>
-<p><img src="https://img-blog.csdnimg.cn/defa480b27ac4827990ac944d03a9b9b.jpeg#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041754602.jpeg" alt="在这里插入图片描述"></p>
 <ul>
 <li>再之后将被调用函数的局部变量压入栈内<br> <strong>&#x3D;&#x3D;栈顶永远是当前正在执行的指令所属的函数对应的栈帧&#x3D;&#x3D;</strong></li>
 </ul>
