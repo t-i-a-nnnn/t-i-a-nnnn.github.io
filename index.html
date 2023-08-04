@@ -738,7 +738,7 @@
   <p>第四章-实验三（编程、编译、连接、跟踪）</p>
 <h1 id="（1）-根据题示完成tl-asm文件，并生成可执行文件tl-exe"><a href="#（1）-根据题示完成tl-asm文件，并生成可执行文件tl-exe" class="headerlink" title="（1） 根据题示完成tl.asm文件，并生成可执行文件tl.exe"></a>（1） 根据题示完成tl.asm文件，并生成可执行文件tl.exe</h1><p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824073.png" alt="在这里插入图片描述"></p>
 <h1 id="（2）用Debug跟踪tl-exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容"><a href="#（2）用Debug跟踪tl-exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容" class="headerlink" title="（2）用Debug跟踪tl.exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容"></a>（2）用Debug跟踪tl.exe的执行过程，记录每一步执行后，相关寄存器中的内容和栈顶内容</h1><p><strong>执行前两部步，ax赋值2000H，并把值赋予ss。初始化sp，并赋值</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824190.png" alt="在这里插入图片描述"></p>
-<p><strong>执行pop ax，pop bx。每执行一次sp都+2</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824991.png" alt="在这里插入图片描述"><br><strong>执行push ax,push bx。每执行一次sp都-2</strong><br><img src="https://img-blog.csdnimg.cn/4ae3e97541654459a31684b79255ada2.png#pic_center" alt="在这里插入图片描述"><br><strong>继续执行，直到安全退出</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824731.png" alt="在这里插入图片描述"><br>&#x3D;&#x3D;由上图可知栈顶一直为0&#x3D;&#x3D;</p>
+<p><strong>执行pop ax，pop bx。每执行一次sp都+2</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824991.png" alt="在这里插入图片描述"><br><strong>执行push ax,push bx。每执行一次sp都-2</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041828984.png" alt="在这里插入图片描述"><br><strong>继续执行，直到安全退出</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824731.png" alt="在这里插入图片描述"><br>&#x3D;&#x3D;由上图可知栈顶一直为0&#x3D;&#x3D;</p>
 <h1 id="（3）查看PSP的内容"><a href="#（3）查看PSP的内容" class="headerlink" title="（3）查看PSP的内容"></a>（3）查看PSP的内容</h1><p><strong>由上图知DS和CS之间差10H，即256个字节，这段内存就是psp区，进去看看。</strong><br><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824520.png" alt="在这里插入图片描述"></p>
  
       <!-- reward -->
@@ -792,7 +792,7 @@
 <p><font size="6">目录遍历</font></p>
 </blockquote>
 <p>1.进入环境，根据提示寻找flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTFjiT"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041824919.jpeg" alt="xTFjiT.jpg"></a>  </p>
-<p>2.一个一个包寻找，最终在包4&#x2F;4找到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTkCLR"><img src="https://img-blog.csdnimg.cn/img_convert/247876777ddaba377c45611c93d37296.jpeg" alt="xTkCLR.jpg"></a>  </p>
+<p>2.一个一个包寻找，最终在包4&#x2F;4找到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTkCLR"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041829285.jpeg" alt="xTkCLR.jpg"></a>  </p>
 <blockquote>
 <p><font size="6">PHPINFO</font>  </p>
 </blockquote>
@@ -801,10 +801,10 @@
 <blockquote>
 <p><font size="6">备份文件下载</font>  </p>
 </blockquote>
-<h3 id="网站源码"><a href="#网站源码" class="headerlink" title="- 网站源码"></a>- 网站源码</h3><p>1.根据提示，进行源文件搜索，最终在<a target="_blank" rel="noopener" href="http://www.zip找到东西,解压得到如下/">www.zip找到东西，解压得到如下</a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe1G6"><img src="https://img-blog.csdnimg.cn/img_convert/ad0011dfb2aa6e1b70e6eee14875c064.jpeg" alt="xTe1G6.jpg"></a>  </p>
+<h3 id="网站源码"><a href="#网站源码" class="headerlink" title="- 网站源码"></a>- 网站源码</h3><p>1.根据提示，进行源文件搜索，最终在<a target="_blank" rel="noopener" href="http://www.zip找到东西,解压得到如下/">www.zip找到东西，解压得到如下</a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe1G6"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041829840.jpeg" alt="xTe1G6.jpg"></a>  </p>
 <p>2.打开之后发现被耍了😅<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe3RK"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825946.jpeg" alt="xTe3RK.jpg"></a>   </p>
 <p>3.直接在网站上访问txt文件，得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe0it"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825445.jpeg" alt="xTe0it.jpg"></a>  </p>
-<h3 id="bak文件"><a href="#bak文件" class="headerlink" title="- bak文件"></a>- bak文件</h3><p>1.直接根据提示访问index.php.bak文件<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe2Zj"><img src="https://img-blog.csdnimg.cn/img_convert/fba953785f832143425e0e910f752c13.jpeg" alt="xTe2Zj.jpg"></a>  </p>
+<h3 id="bak文件"><a href="#bak文件" class="headerlink" title="- bak文件"></a>- bak文件</h3><p>1.直接根据提示访问index.php.bak文件<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe2Zj"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041829237.jpeg" alt="xTe2Zj.jpg"></a>  </p>
 <p>2.得到flag<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTe7yF"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825816.jpeg" alt="xTe7yF.jpg"></a>  </p>
 <h3 id="vim缓存"><a href="#vim缓存" class="headerlink" title="- vim缓存"></a>- vim缓存</h3><p>1.简单百度了一下vim缓存文件的后缀为.swp，直接访问<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xTmNlT"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041825782.jpeg" alt="xTmNlT.jpg"></a>  </p>
 <p>2.结果还是Not found  </p>
@@ -928,7 +928,7 @@
 </blockquote>
 <p>1.题目给出100组数组  </p>
 <p>2.进入环境，敲击页面中的click，可知这次要进行爆破<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopH8s"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826771.jpeg" alt="xopH8s.jpg"></a>  </p>
-<p>3.开始抓包！在包中发现关键字Authorization basic(基础认证)<br>后面跟着一段base加密的东西，解码看看<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopxVU"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826192.jpeg" alt="xopxVU.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo9Ar6"><img src="https://img-blog.csdnimg.cn/img_convert/23ff538410eeb452802b71ae8121bd6f.jpeg" alt="xo9Ar6.jpg"></a>  </p>
+<p>3.开始抓包！在包中发现关键字Authorization basic(基础认证)<br>后面跟着一段base加密的东西，解码看看<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xopxVU"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826192.jpeg" alt="xopxVU.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo9Ar6"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041830697.jpeg" alt="xo9Ar6.jpg"></a>  </p>
 <p>4.可知账号密码的格式应为（账号：密码）</p>
 <p>5.将包发送到Intruder，添加地址<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xo93sP"><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308041826214.jpeg" alt="xo93sP.jpg"></a>  </p>
 <p>6.导入字典，启用一个base64编码在payload processing，关闭URL-encode these characters，开始爆破！！！！！！！！  </p>
